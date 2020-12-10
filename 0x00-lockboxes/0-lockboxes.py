@@ -13,9 +13,9 @@ def canUnlockAll(boxes):
 
     for box in boxes:
         if indxBox in keys:
-           for key in box:
-               if key not in keys:
-                   keys.append(key)
+            for key in box:
+                if key not in keys:
+                    keys.append(key)
 
         indxBox += 1
 
@@ -23,10 +23,10 @@ def canUnlockAll(boxes):
 
     for box in boxes:
         if indxBox in keys:
-           for key in box:
-               if key not in keys:
-                   keys.append(key)
+            for key in box:
+                if key not in keys:
+                    keys.append(key)
 
         indxBox += 1
 
-    return len(keys) == len(boxes)   
+    return len(keys) == len(boxes)
