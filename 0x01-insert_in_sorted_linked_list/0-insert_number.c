@@ -7,16 +7,17 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *newNode;
-	listint_t *h = *head;
+	listint_t *newNode = NULL;
+	listint_t *h = NULL;
 
-	if (head == NULL || number == '\0')
+	if (!head)
 		return (NULL);
 
 	newNode = malloc(sizeof(listint_t));
 	if (newNode == NULL)
 		return (NULL);
 
+	h = *head;
 	newNode->n = number;
 	newNode->next = NULL;
 
