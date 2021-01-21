@@ -58,11 +58,13 @@ int check_linked_list(listint_t **head, int size)
 int is_palindrome(listint_t **head)
 {
 	int size;
+	int isPalindrome;
 
 	if (head == NULL)
 		return (1);
 
 	size = linked_list_size(head);
+	isPalindrome = check_linked_list(head, size);
 
-	return (check_linked_list(head, size));
+	return (isPalindrome);
 }
