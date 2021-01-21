@@ -66,7 +66,7 @@ int is_palindrome(listint_t **head)
 	newList = copy_linked_list(head, size);
 	end = size - 1;
 
-	for (start = 0; start < 10; start++, end--)
+	for (start = 0; start < end; start++, end--)
 	{
 		if (newList[start] != newList[end])
 			return (0);
