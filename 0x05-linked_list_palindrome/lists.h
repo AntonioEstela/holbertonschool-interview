@@ -21,7 +21,7 @@ typedef struct listint_s
 size_t print_listint(const listint_t *h);
 listint_t *add_nodeint_end(listint_t **head, const int n);
 void free_listint(listint_t *head);
-int check_linked_list(listint_t **head, int size);
+int *copy_linked_list(listint_t **head, int size);
 int linked_list_size(listint_t **head);
 
 int is_palindrome(listint_t **head);
