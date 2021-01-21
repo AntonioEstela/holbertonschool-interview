@@ -22,59 +22,47 @@ int linked_list_size(listint_t **head)
 
 }
 /**
- * copy_linked_list - function that copy a linked list into an array.
+ * check_linked_list - function that checks if a linked list is a palindrome.
  * @head: A pointer to the head of the list.
  * @size: The size of the list.
- * Return: A pointer to the new array otherwhise returns NULL.
+ * Return: 1 if the list is palindrome, otherwhise will return 0.
  */
-int *copy_linked_list(listint_t **head, int size)
+int check_linked_list(listint_t **head, int size)
 {
 	listint_t *h = (*head);
-	int *newList;
+	int newList[size];
 	int i = 0;
-
-	if (head == NULL || *head == NULL)
-		return (NULL);
-
-	newList = malloc(sizeof(size) * size);
-	if (newList == NULL)
-		return (NULL);
+	int start = 0;
+	int end = size - 1;
 
 	for (i = 0; i < size; i++, h = h->next)
 	{
 		newList[i] = h->n;
 	}
 
-	return (newList);
+	for (start = 0; start < end; start++, end--)
+	{
+		if (newList[start] != newList[end])
+		{
+			return (0);
+		}
+	}
+
+	return (1);
 }
 /**
- * is_palindrome - function that checks if a linked list is a palindromeor not.
+ * is_palindrome - function that checks if a linked list is a palindrome or not
  * @head: A pointer to the head of the list.
  * Return: 1 if the list is palindrome, otherwhise will return 0.
  */
 int is_palindrome(listint_t **head)
 {
 	int size;
-	int *newList;
-	int start = 0;
-	int end;
 
 	if (head == NULL)
 		return (1);
 
 	size = linked_list_size(head);
-	newList = copy_linked_list(head, size);
-	end = size - 1;
 
-	for (start = 0; start < end; start++, end--)
-	{
-		if (newList[start] != newList[end])
-		{
-			free(newList);
-			return (0);
-		}
-	}
-
-	free(newList);
-	return (1);
+	return (check_linked_list(head, size));
 }
