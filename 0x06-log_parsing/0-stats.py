@@ -3,7 +3,7 @@
 
 import sys
 
-data = {'Size': 0, 'Codes': {"200": 0, "301": 0, "400": 0, "401": 0,
+data = {"Size": 0, "Codes": {"200": 0, "301": 0, "400": 0, "401": 0,
                              "403": 0, "404": 0, "405": 0, "500": 0}}
 
 
@@ -27,16 +27,19 @@ if __name__ == "__main__":
             """Split the line taken from stdin and save only the needed data"""
 
             newLine = line.split(" ")
-            code = newLine[-2]
-            size = int(newLine[-1])
+            try:
+                size = int(newLine[-1])
+                code = newLine[-2]
 
-            """If the status code is a possible status code
-            it will count + 1 in the dict to count how many of they are"""
+                """If the status code is a possible status code
+                it will count + 1 in the dict to count how many of they are"""
 
-            if code in data['Codes']:
-                data['Codes'][code] += 1
+                if code in data['Codes']:
+                    data['Codes'][code] += 1
 
-            data['Size'] += size
+                data['Size'] += size
+            except:
+                pass
 
             if lines % 10 == 0:
                 printFormat()
