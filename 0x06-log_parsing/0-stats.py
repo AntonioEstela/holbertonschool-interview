@@ -3,8 +3,8 @@
 
 import sys
 
-data = {'Size': 0, 'Codes': {200: 0, 301: 0, 400: 0, 401: 0,
-                             403: 0, 404: 0, 405: 0, 500: 0}}
+data = {'Size': 0, 'Codes': {"200": 0, "301": 0, "400": 0, "401": 0,
+                             "403": 0, "404": 0, "405": 0, "500": 0}}
 
 
 def printFormat():
@@ -27,7 +27,7 @@ if __name__ == "__main__":
             """Split the line taken from stdin and save only the needed data"""
 
             newLine = line.split(" ")
-            code = int(newLine[-2])
+            code = newLine[-2]
             size = int(newLine[-1])
 
             """If the status code is a possible status code
