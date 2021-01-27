@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Script that reads stdin line by line and computes metrics"""
 
-import fileinput
+import sys
 
 data = {'Size': 0, 'Codes': {200: 0, 301: 0, 400: 0, 401: 0,
                              403: 0, 404: 0, 405: 0, 500: 0}}
@@ -28,8 +28,8 @@ if __name__ == "__main__":
 
     try:
 
-        lines = 0
-        for line in fileinput.input():
+        lines = 1
+        for line in sys.stdin:
 
             """Split the line taken from stdin and save only the needed data"""
 
