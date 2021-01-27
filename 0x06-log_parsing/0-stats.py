@@ -12,7 +12,7 @@ def printFormat():
 
     print("File size: {}".format(data['Size']))
 
-    for statusCode, count in data['Codes'].items():
+    for statusCode, count in sorted(data['Codes'].items()):
         if count != 0:
             print("{}: {}".format(statusCode, count))
 
