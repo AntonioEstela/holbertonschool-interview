@@ -17,13 +17,6 @@ def printFormat():
             print("{}: {}".format(statusCode, count))
 
 
-def cleanDict(dict={}):
-    """Function that sets all the elements of a dictionary to 0"""
-
-    for elem in dict.keys():
-        dict[elem] = 0
-
-
 if __name__ == "__main__":
 
     try:
@@ -44,13 +37,11 @@ if __name__ == "__main__":
                 data['Codes'][code] += 1
 
             data['Size'] += size
-            lines += 1
 
             if lines % 10 == 0:
                 printFormat()
 
-                """Cleaning up everything to next iteration"""
-                cleanDict(data['Codes'])
+            lines += 1
 
     except KeyboardInterrupt:
         """Handling CTRL + C"""
