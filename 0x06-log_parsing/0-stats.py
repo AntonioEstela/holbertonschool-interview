@@ -50,7 +50,6 @@ if __name__ == "__main__":
                 printFormat()
 
                 """Cleaning up everything to next iteration"""
-                data['Size'] = 0
                 cleanDict(data['Codes'])
 
     except KeyboardInterrupt:
