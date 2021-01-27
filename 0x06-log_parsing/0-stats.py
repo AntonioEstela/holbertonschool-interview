@@ -23,22 +23,20 @@ if __name__ == "__main__":
 
         lines = 1
         for line in sys.stdin:
-            try:
-                """Split the line taken from stdin and save only the needed data"""
 
-                newLine = line.split(" ")
-                code = int(newLine[-2])
-                size = int(newLine[-1][:-1])
+            """Split the line taken from stdin and save only the needed data"""
 
-                """If the status code is a possible status code
-                it will count + 1 in the dict to count how many of they are"""
+            newLine = line.split(" ")
+            code = int(newLine[-2])
+            size = int(newLine[-1])
 
-                if code in data['Codes']:
-                    data['Codes'][code] += 1
+            """If the status code is a possible status code
+            it will count + 1 in the dict to count how many of they are"""
 
-                data['Size'] += size
-            except:
-                pass
+            if code in data['Codes']:
+                data['Codes'][code] += 1
+
+            data['Size'] += size
 
             if lines % 10 == 0:
                 printFormat()
