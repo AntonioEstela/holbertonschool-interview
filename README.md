@@ -1,2 +1,2 @@
 # holbertonschool-interview
-Repository for some interview preparation projects
+Interview preparation projects done during Holberton specialization
