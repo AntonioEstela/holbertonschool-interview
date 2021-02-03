@@ -15,7 +15,7 @@ int check_cycle(listint_t *list)
 	turtle = list;
 	hare = list;
 
-	while (turtle->next != NULL && hare->next->next != NULL)
+	while (hare->next && hare)
 	{
 		turtle = turtle->next;
 		hare = hare->next->next;
