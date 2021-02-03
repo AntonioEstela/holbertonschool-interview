@@ -9,7 +9,7 @@ int check_cycle(listint_t *list)
 	listint_t *turtle = NULL;
 	listint_t *hare = NULL;
 
-	if (list == NULL)
+	if (!list)
 		return (0);
 
 	turtle = list;
