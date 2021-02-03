@@ -6,30 +6,23 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *turtle = list;
-	listint_t *hare = list;
+	listint_t *turtle = NULL;
+	listint_t *hare = NULL;
 
 	if (list == NULL)
 		return (0);
 
+	turtle = list;
+	hare = list;
+
 	while (turtle->next != NULL && hare->next->next != NULL)
 	{
-		if (turtle->next)
-			turtle = turtle->next;
-
-		if (hare->next->next)
-			hare = hare->next->next;
+		turtle = turtle->next;
+		hare = hare->next->next;
 
 		if (hare == turtle)
-		{
-			free(turtle);
-			free(hare);
 			return (1);
-		}
-
 	}
 
-	free(turtle);
-	free(hare);
 	return (0);
 }
