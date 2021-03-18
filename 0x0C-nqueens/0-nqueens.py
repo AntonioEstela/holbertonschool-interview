@@ -11,7 +11,7 @@ where N must be an integer greater or equal to 4
     followed by a new line, and exit with the status 1
 
     If N is smaller than 4, print N must be at least 4,
-    followed by a new line, and exit with the status 
+    followed by a new line, and exit with the status.
 """
 
 import sys
