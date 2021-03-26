@@ -30,4 +30,5 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 avl_t *sorted_array_to_avl(int *array, size_t size);
 avl_t *splice_array(int *array, size_t start, size_t end, avl_t *parent);
 void binary_tree_print(const binary_tree_t *tree);
+
 #endif
