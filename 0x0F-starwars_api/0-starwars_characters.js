@@ -2,7 +2,7 @@
 
 const request = require('request');
 const starWarsUrl = 'https://swapi-api.hbtn.io/api/films/';
-const args = process.argv[2];
+const args = process.argv[1];
 
 request(starWarsUrl + args, function (err, res, body) {
   if (err) {
