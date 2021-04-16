@@ -5,10 +5,10 @@
 def rain(walls):
     """calculate how much water will be retained after it rains"""
     n = len(walls)
-    
+
     if n == 0:
         return 0
-    
+
     lts = 0
     lft = [0] * n
     lft[0] = walls[0]
