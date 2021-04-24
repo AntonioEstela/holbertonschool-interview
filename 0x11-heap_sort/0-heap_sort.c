@@ -1,21 +1,5 @@
 #include "sort.h"
 /**
- * heapify - function that Build the heap
- * in array a so that largest value is at the root
- * @array: sorting array
- * @size: length array
- */
-void heapify(int *array, size_t size)
-{
-	int start = (size - 1) / 2;
-
-	while (start >= 0)
-	{
-		siftDown(array, start, size - 1, size);
-		start = start - 1;
-	}
-}
-/**
  * siftDown - Repair the heap whose root element
  * is at index 'start', assuming the heaps
  * rooted at its children are valid
@@ -47,6 +31,22 @@ void siftDown(int *array, size_t start, size_t end, size_t size)
 		}
 		else
 			return;
+	}
+}
+/**
+ * heapify - function that Build the heap
+ * in array a so that largest value is at the root
+ * @array: sorting array
+ * @size: length array
+ */
+void heapify(int *array, size_t size)
+{
+	int start = (size - 1) / 2;
+
+	while (start >= 0)
+	{
+		siftDown(array, start, size - 1, size);
+		start = start - 1;
 	}
 }
 /**
