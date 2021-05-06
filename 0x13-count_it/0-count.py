@@ -46,7 +46,7 @@ def print_alphabetically(dict):
     """
     Function that prints alphabetically a dictionary
     """
-    for k, v in sorted(dict.items(), key=lambda value: value[1], reverse=True):
+    for k, v in sorted(dict.items(), key=lambda value: (-value[1], value[0])):
         if v != 0:
             print('{}: {}'.format(k, v))
 
