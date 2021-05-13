@@ -60,7 +60,6 @@ int heap_extract(heap_t **root)
 
 	if (root == NULL || *root == NULL)
 		return (0);
-
 	aux = *root, deleted = aux->n;
 
 	if (aux->left == NULL && aux->right == NULL)
@@ -69,7 +68,6 @@ int heap_extract(heap_t **root)
 		free(aux);
 		return (deleted);
 	}
-
 	binary_tree_preorder(aux, &del, binary_tree_height(aux), level);
 
 	while (aux->left || aux->right)
@@ -87,9 +85,7 @@ int heap_extract(heap_t **root)
 			aux = aux->right;
 		}
 	}
-
 	aux->n = del->n;
-
 	if (del->parent->right)
 		del->parent->right = NULL;
 
