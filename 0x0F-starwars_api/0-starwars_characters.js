@@ -22,5 +22,3 @@ const end = function (characters, i) {
 };
 
 start();
-
-start();
